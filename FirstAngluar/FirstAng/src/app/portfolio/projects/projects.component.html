@@ -1,0 +1,20 @@
+<section id="projects" class="section-padding projects-section">
+    <div class="container">
+        <h2>Featured <span class="highlight">Projects</span></h2>
+
+        <div class="projects-grid">
+            <div class="project-card" *ngFor="let project of projects">
+                <div class="card-content">
+                    <div class="highlight-badge">{{ project.highlight }}</div>
+                    <h3>{{ project.name }}</h3>
+                    <p class="tech-stack">{{ project.tech }}</p>
+                    <p class="description">{{ project.description }}</p>
+
+                    <a [href]="project.link" target="_blank" class="btn-details">
+                        <i class="fab fa-github"></i> GitHub Repo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

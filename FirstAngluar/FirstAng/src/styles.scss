@@ -1,0 +1,117 @@
+:root {
+    /* Peaky Blinders Palette */
+    --bg-color: #050505;
+    /* Pure black/soot */
+    --bg-secondary: #0e0e10;
+    /* Dark grey */
+    --bg-about-gradient: linear-gradient(to bottom, #050505, #1a1a1d);
+
+    --text-primary: #e0e0e0;
+    /* Dull silver/off-white */
+    --text-secondary: #888888;
+    /* Muted grey */
+
+    --accent-color: #c5a059;
+    /* Vintage Brass/Gold */
+    --accent-glow: rgba(197, 160, 89, 0.3);
+
+    /* Dark "Smoked" Glass - No more milky white */
+    --glass-bg: rgba(20, 20, 25, 0.9);
+    --glass-border: rgba(197, 160, 89, 0.2);
+
+    --font-main: 'Outfit', sans-serif;
+    --bg-pattern: repeating-linear-gradient(45deg, rgba(30, 30, 30, 0.05) 0px, rgba(30, 30, 30, 0.05) 2px, transparent 2px, transparent 4px);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    /* Fallback */
+    background-image: var(--bg-pattern);
+    color: var(--text-primary);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+    /* Ensure full height */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px var(--accent-glow);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    100% {
+        box-shadow: 0 0 5px var(--accent-glow);
+    }
+}
+
+.section-padding {
+    padding: 100px 20px;
+    width: 100%;
+}
+
+.container {
+    max-width: 1300px;
+    /* Slightly wider for modern feel */
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+button {
+    cursor: pointer;
+    font-family: var(--font-main);
+}

@@ -1,0 +1,81 @@
+.education-section {
+    background: var(--bg-color);
+    /* Deep Soot */
+    position: relative;
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+        color: #fff;
+
+        .highlight {
+            color: var(--accent-color);
+        }
+    }
+
+    .education-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .edu-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        padding: 30px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+
+        .icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .details {
+            h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                color: #fff;
+            }
+
+            .degree {
+                color: var(--text-secondary);
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+
+            .score {
+                color: var(--accent-color);
+                font-weight: 700;
+                margin-bottom: 5px;
+            }
+
+            .year {
+                display: block;
+                font-size: 0.9rem;
+                color: #888;
+            }
+        }
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}

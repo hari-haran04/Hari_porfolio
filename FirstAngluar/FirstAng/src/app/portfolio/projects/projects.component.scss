@@ -1,0 +1,98 @@
+.projects-section {
+    background: var(--bg-secondary);
+    /* Dark Grey */
+    position: relative;
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 60px;
+        color: #fff;
+
+        .highlight {
+            color: var(--accent-color);
+        }
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .project-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        transition: 0.4s;
+        backdrop-filter: blur(10px);
+
+        // Hover zoom effect
+        &:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-color);
+        }
+
+        .highlight-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(197, 160, 89, 0.2);
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .tech-stack {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+
+        .description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-details {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            font-weight: 600;
+            transition: 0.3s;
+            padding: 10px 20px;
+            border: 1px solid var(--accent-color);
+            border-radius: 5px;
+            text-decoration: none;
+
+            i {
+                transition: 0.3s;
+            }
+
+            &:hover {
+                color: var(--accent-color);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 5px;
+                padding: 10px 15px;
+                /* Add padding on hover or permanent */
+            }
+        }
+    }
+}

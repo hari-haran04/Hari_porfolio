@@ -1,0 +1,108 @@
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    background-attachment: fixed; // Parallax
+    color: var(--text-primary);
+    overflow: hidden;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(5, 5, 16, 0.7); // Dark overlay
+        z-index: 1;
+    }
+
+    .content {
+        position: relative;
+        z-index: 2;
+        padding: 0 20px;
+        animation: fadeIn 1.5s ease-out;
+
+        .name {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+
+            // Smoke reveal effect approximation
+            background: linear-gradient(to right, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            .highlight {
+                color: var(--accent-color);
+                -webkit-text-fill-color: var(--accent-color);
+                text-shadow: 0 0 20px var(--accent-glow);
+            }
+        }
+
+        .role {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
+            width: auto;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .btn {
+                padding: 15px 30px;
+                border-radius: 5px;
+                font-size: 1rem;
+                font-weight: 600;
+                transition: 0.3s;
+                border: 2px solid transparent;
+
+                &.btn-primary {
+                    background: var(--accent-color);
+                    color: #000;
+
+                    &:hover {
+                        box-shadow: 0 0 20px var(--accent-glow);
+                        transform: translateY(-5px);
+                    }
+                }
+
+                &.btn-outline {
+                    border: 2px solid var(--accent-color);
+                    color: var(--accent-color);
+                    background: transparent;
+
+                    &:hover {
+                        background: var(--accent-color);
+                        color: #000;
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content .name {
+            font-size: 3rem;
+        }
+    }
+}

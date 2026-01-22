@@ -1,0 +1,19 @@
+<section id="education" class="section-padding education-section">
+    <div class="container">
+        <h2>My <span class="highlight">Education</span></h2>
+
+        <div class="education-grid">
+            <div class="edu-card" *ngFor="let edu of education">
+                <div class="icon">
+                    <i [class]="edu.icon"></i>
+                </div>
+                <div class="details">
+                    <h3>{{ edu.institution }}</h3>
+                    <p class="degree">{{ edu.degree }}</p>
+                    <p class="score">{{ edu.score }}</p>
+                    <span class="year">{{ edu.year }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

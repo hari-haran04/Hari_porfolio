@@ -1,0 +1,49 @@
+<section id="contact" class="section-padding contact-section">
+    <div class="container">
+        <h2>Get In <span class="highlight">Touch</span></h2>
+
+        <div class="contact-wrapper">
+            <div class="form-container">
+                <form (submit)="sendMessage(); $event.preventDefault()">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="name" name="name" placeholder="Your Name" required
+                            [disabled]="isSending">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" [(ngModel)]="email" name="email" placeholder="Your Email" required
+                            [disabled]="isSending">
+                    </div>
+                    <div class="form-group">
+                        <textarea [(ngModel)]="message" name="message" rows="5" placeholder="Your Message" required
+                            [disabled]="isSending"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-send" [disabled]="isSending">
+                        <span *ngIf="!isSending">Send Message <i class="fas fa-paper-plane"></i></span>
+                        <span *ngIf="isSending">Sending... <i class="fas fa-spinner fa-spin"></i></span>
+                    </button>
+
+                    <div *ngIf="sentSuccess" class="success-message">
+                        Message sent successfully! I will get back to you soon.
+                    </div>
+                </form>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect with me</h3>
+                <div class="links">
+                    <a href="mailto:harinatraj204@gmail.com" class="social-btn email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/hariharan-n-348420263/" target="_blank"
+                        class="social-btn linkedin">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/hari-haran04" target="_blank" class="social-btn github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,17 @@
+<nav [class.scrolled]="isScrolled">
+    <div class="logo">HARIHARAN N</div>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+        <li (click)="scrollToSection('home')">Home</li>
+        <li (click)="scrollToSection('about')">About</li>
+        <li (click)="scrollToSection('skills')">Skills</li>
+        <li (click)="scrollToSection('projects')">Projects</li>
+        <li (click)="scrollToSection('experience')">Experience</li>
+        <li (click)="scrollToSection('achievements')">Achievements</li>
+        <li (click)="scrollToSection('contact')">Contact</li>
+    </ul>
+
+    <div class="hamburger" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+</nav>

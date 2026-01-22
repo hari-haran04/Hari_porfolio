@@ -1,0 +1,86 @@
+.skills-section {
+    background: var(--bg-color);
+    /* Deep Soot */
+    position: relative;
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #fff;
+        /* Force white for visibility */
+
+        .highlight {
+            color: var(--accent-color);
+        }
+    }
+
+    .skill-categories {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .category {
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            color: var(--text-secondary);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    .skill-card {
+        background: var(--glass-bg);
+        /* Dark smoked glass */
+        border: 1px solid var(--glass-border);
+        padding: 20px 30px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transition: 0.3s;
+        cursor: pointer;
+        min-width: 150px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        /* Added depth */
+
+        .icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            transition: 0.5s;
+            filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.4));
+            /* Glow for icon */
+        }
+
+        p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            /* Ensure bright text */
+        }
+
+        &:hover {
+            background: rgba(197, 160, 89, 0.15);
+            /* Slightly brighter on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px var(--accent-glow);
+            border-color: var(--accent-color);
+
+            .icon {
+                transform: rotateY(360deg);
+                color: #fff;
+                /* Icon turns white on gold background interaction */
+            }
+        }
+    }
+}

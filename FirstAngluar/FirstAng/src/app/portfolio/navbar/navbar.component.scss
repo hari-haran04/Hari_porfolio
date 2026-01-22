@@ -1,0 +1,102 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s;
+    z-index: 1000;
+    color: var(--text-primary);
+
+    &.scrolled {
+        background: rgba(5, 5, 16, 0.95);
+        padding: 15px 50px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+        background: linear-gradient(to right, #fff, var(--accent-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+
+        li {
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+            transition: 0.3s;
+
+            &:hover {
+                color: var(--accent-color);
+                text-shadow: 0 0 10px var(--accent-glow);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                background: var(--accent-color);
+                bottom: -5px;
+                left: 0;
+                transition: 0.3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px;
+
+        &.scrolled {
+            padding: 15px 20px;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .nav-links {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100vh; // Full screen mobile menu
+            background: var(--bg-color);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            transform: translateX(100%);
+            transition: 0.4s ease-in-out;
+            opacity: 0;
+
+            &.active {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    }
+}
